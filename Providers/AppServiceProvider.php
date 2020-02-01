@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('Helpers\APIAuth', function()
         {
-            return \App\Helpers\APIAuth::getInstance();
+            return \App\Utils\Helpers\APIAuth::getInstance();
         });
     }
 }
