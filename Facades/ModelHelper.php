@@ -11,6 +11,6 @@ class ModelHelper extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return '\App\Helpers\ModelHelper'; 
+        return '\App\Utils\Helpers\ModelHelper'; 
     }
 }
