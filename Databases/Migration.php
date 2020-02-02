@@ -14,7 +14,7 @@ class Migration
 
     public function execute(){
         $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME =  ?";
-        $db = DB::select($query, [env('DB_DATABASE')]);
+        $db = \DB::select($query, [env('DB_DATABASE')]);
 
         if (empty($db)) {
             echo 'No db exist of that name!';
