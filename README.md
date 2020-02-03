@@ -84,7 +84,7 @@ ControllerModel fornece 6 functions basicos para operações de API REST
     Atualizar e valida só os campos enviado via request
   </li>
   <li>
-    <p>gelete</p>
+    <p>delete</p>
   </li>
   <li>
     <p> get </p>
