@@ -25,7 +25,6 @@ class APIAuth
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_PORT => "8000",
             CURLOPT_URL => env('API_AUTH_BASE_URL')."/api/users/check-auth",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CUSTOMREQUEST => "GET",
