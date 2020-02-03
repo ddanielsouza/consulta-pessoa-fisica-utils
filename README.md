@@ -56,7 +56,7 @@ Baixe o projeto e o adicione no diretório **app/Utils**
 
 #### ControllerModel ####
 
-ControllerModel fornece 6 methodos basicos para operações de API REST
+ControllerModel fornece 6 functions basicos para operações de API REST
 <ul>
   <li>
     <p>getById</p>
@@ -64,12 +64,31 @@ ControllerModel fornece 6 methodos basicos para operações de API REST
     <br>
     Ex:
     <blockquote>
-    CURL http://domain/api/financial-movement?relations=["clients"]
+    [GET] http://domain/api/financial-movement?relations=["clients"]
    </blockquote>
   </li>
   <li>
     <p>save</p>
     "save" usa como validação o <a href="https://laravel.com/docs/5.8/validation">"Validator"</a> e deve se especificado no atributo "$basicValidate"
+  </li>
+  <li>
+    <p>update</p>
+    deve passar o id do registro via "pretty" url 
+    <blockquote>
+    [POST] http://domain/api/financial-movement/1]
+    </blockquote>
+    Validação idem a function save
+  </li>
+  <li>
+    <p>patch</p>
+    Atualizar e valida só os campos enviado via request
+  </li>
+  <li>
+    <p>gelete</p>
+  </li>
+  <li>
+    <p> get </p>
+    Buscar e filtrar os registros da model. Campos de hash md5 deve ser especificado em  $columnsEncrypted para usar na filtragem
   </li>
 </ul>
 
@@ -106,3 +125,22 @@ class AddressController extends ControllerModel
 }
 
 ``` 
+<br>
+
+```PHP
+    $router->group(['prefix'=>'address'], function() use ($router){
+        $router->post('/', 'AddressController@save');
+        $router->get('/', 'AddressController@get');
+        $router->get('/{id}', 'AddressController@getById');
+        $router->put('/{id}', 'AddressController@update');
+        $router->patch('/{id}', 'AddressController@patch');
+        $router->delete('/{id}', 'AddressController@delete');
+    });
+ ``` 
+
+Outras classes auxiliares 
+<ul>
+  <li> App\Utils\Middleware\CorsMiddleware::class : habilita o "cors" (Está configurado para "localhost:8080") </li>
+  <li>App\Utils\Facades\APIAuth : "Fachada" para classe de comunicação com a  <a href="https://github.com/ddanielsouza/consulta-pessoa-fisica-auth">API de autenticação</a></li>
+  <li> App\Utils\Helpers\ISOSerialization : Serializa as datas para ISO ao passar para JSON </li>
+</ul>
