@@ -2,33 +2,28 @@
 
 Projeto de código utilitários usado nos micro-serviços "Consulta pessoa física"
 
-### PRÉ-REQUISITOS: ##
+### Pré-Requisitos: ##
 Esse ultilitario foi codificado para o Lumen PHP Framework, rodado e testado sobre a versão 6.0 do Lumen e PHP 7.2,
 e pode ser usado com o GIT ou inserido manualmente no projeto.
 
-### COMEÇAR ###
-GIT:
-```
-  git submodule add https://github.com/ddanielsouza/consulta-pessoa-fisica-utils.git app/Utils
-```
+### Para começar ###
 
-```
-  git submodule init
-```
+<h4> Git </h4>:
 
-```
-  git submodule update
-```
+- `git submodule add https://github.com/ddanielsouza/consulta-pessoa-fisica-utils.git app/Utils`
+  
 
-PARA BUCAR NOVAS ATUALIZAÇÕES
+- `git submodule init `
 
-```
-  cd app/Utils
-```
 
-```
-  git pull
-```
+- `git submodule update `
+
+### Para buscar novas atualizações
+
+- `cd app/Utils`
+
+- `git pull`
+
 <p>MANUAL:</p>
 Baixe o projeto e o adicione no diretório **app/Utils**
 
@@ -52,7 +47,7 @@ Baixe o projeto e o adicione no diretório **app/Utils**
   </li>
 </ul>
 
-### USANDO ###
+### Utilização do Projeto ###
 
 #### ControllerModel ####
 
